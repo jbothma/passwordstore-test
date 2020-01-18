@@ -23,7 +23,16 @@ Just run `pass`
     │       └── POSTGRES_PASSWORD
 
 
-## Creating and storing a secret
+## Inserting a specific secret value in the store
+
+     $ pass insert apps/someapp/DJANGO_SECRET
+    Enter password for apps/someapp/DJANGO_SECRET:
+    Retype password for apps/someapp/DJANGO_SECRET:
+    [master 2ec70df] Add given password for apps/someapp/DJANGO_SECRET to store.
+     1 files changed, 106 insertions(+)
+
+
+## Generating and storing a random secret value
 
 Use `pass generate ...` - see help for details.
 
@@ -40,7 +49,7 @@ Use `pass generate ...` - see help for details.
 
 Run `pass show ...path...` to print to command line or `pass show --clip ...path...` or `-c` to copy it to clipboard. Pass will clear it from the clipboard after 45 seconds by default.
 
-     $ pass apps/someapp/DJANGO_SECRET
+     $ pass show apps/someapp/DJANGO_SECRET
     <|zMEs!MR9
 
 
