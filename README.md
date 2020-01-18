@@ -113,3 +113,34 @@ To fix it, in this case the init command could be rerun, this time giving the co
     [master 237b2a2] Reencrypt password store using new GPG id aaa@gmail.com, bbbb@gmail.com (apps/someapp).
      1 file changed, 0 insertions(+), 0 deletions(-)
      rewrite apps/someapp/AWS_SECRET_ACCESS_KEY.gpg (100%)
+
+
+SANITY-CHECKING
+---------------
+
+Verifying that we're encrypting for the correct readers is important to trust this tool.
+
+Here we created a keyring that contains the public and private keys for only bbb@gmail.com.
+
+As in the examples above, bbb@gmail.com is only allowed to read secrets in apps/someapp, not in apps/anotherapp.
+
+We verify that that is indeed the case by specifying the keyring gpg should use when trying to read those secrets, and that the correct one is denied:
+
+     $ gpg --no-default-keyring --keyring=test1-keyring --import test1-public-key
+    gpg: key EC79740D6A8ACAA3: "BBB (Test Person 1) <bbb@gmail.com>" not changed
+    gpg: Total number processed: 1
+    gpg:              unchanged: 1
+
+     $ gpg --no-default-keyring --keyring=test1-keyring --import test1-secret-key
+    gpg: key EC79740D6A8ACAA3: "BBB (Test Person 1) <bbb@gmail.com>" not changed
+    gpg: key EC79740D6A8ACAA3: secret key imported
+    gpg: Total number processed: 1
+    gpg:              unchanged: 1
+    gpg:       secret keys read: 1
+    gpg:  secret keys unchanged: 1
+
+     $ PASSWORD_STORE_GPG_OPTS="--no-default-keyring --keyring=bbb-keyring" pass show apps/anotherapp/DJANGO_SECRET
+    gpg: decryption failed: No secret key
+
+     $ PASSWORD_STORE_GPG_OPTS="--no-default-keyring --keyring=bbb-keyring" pass show apps/someapp/DJANGO_SECRET
+    <|zMEs!MR9
