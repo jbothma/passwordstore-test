@@ -53,9 +53,11 @@ Run `pass show ...path...` to print to command line or `pass show --clip ...path
     <|zMEs!MR9
 
 
-## Adding or removing a Reader to a specific directory
+## Adding or removing a Reader to a specific directory recursively
 
 This is useful to grant read access to additional readers for a specific directory, but not to everything. Removing the user is the same operation - just omit their gpg-id from the command.
+
+If you specify `-p apps/someapp`, the readers specified here will be able to read secrets in nested directories as well, i.e. `apps/someapp/SECRET` AND `app/someapp/nested/SECRET`
 
 Use `pass init -p ...path... ...all..gpg-ids..that..should..read..this...`.
 
