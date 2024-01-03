@@ -1,0 +1,4 @@
+contact_links:
+  - name: Suggestions for data sources to add to OpenSanctions
+    url: https://opensanctions.org/dataset-suggestion-form
+    about: Do you know of a data source that you think would be great if added to OpenSanctions? Please follow this link, rather than creating an issue.
