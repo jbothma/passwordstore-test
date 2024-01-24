@@ -27,7 +27,7 @@ body:
     id: terms
     attributes:
       label: This is a suggestion or request
-      description: By submitting this issue, you acknowledge that OpenSanctions is under no obligation or expectation to process this list, but may make a decision about its relevance in due course.
+      description: By submitting this suggestion, you acknowledge that OpenSanctions is under no obligation or expectation to process this list, but may make a decision about its relevance in due course.
       options:
         - label: I understand.
           required: true
