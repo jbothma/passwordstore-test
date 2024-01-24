@@ -1,5 +1,6 @@
 ---
 name: New data source request/suggestion
+about: this is the about text
 description: File a bug report
 title: "[Data source]: "
 projects: ["jbothma/1"]
