@@ -1,61 +1,33 @@
 name: New data source request/suggestion
-description: File a bug report
+description: Propose a new data source to potentially be added to OpenSanctions
 title: "[Data source]: "
-projects: ["jbothma/1"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
   - type: input
-    id: contact
+    id: data_url
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
-  - type: textarea
-    id: what-happened
+      label: Data URL
+      description: Where can the data be found, if known?
+- type: dropdown
+    id: type
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
+      label: Type of data
+      description: What kind of data is this?
       options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
-    validations:
-      required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+        - Sanctions (Government barring specific engagement e.g. financial transaction with these entities)
+        - Debarment (Entities banned from participating in public contracting)
+        - Crime/Wanted/Suspected (Persons suspected or convicted of crimes and listed by official law enforcement)
+        - PEPs (Politicall Exposed Persons)
+        - Other risk or public interest (If none of the above fit, but there is corporate compliance or public interest in identifying these entities)
   - type: textarea
-    id: logs
+    id: more_details
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
+      label: Can you tell us more?
+      description: Any more detail we should know? Where can we find the data if not obvious fromt he URL above? Any links to more info? Why is it significant?
   - type: checkboxes
     id: terms
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      label: This is a suggestion or request
+      description: By submitting this issue, you acknowledge that OpenSanctions is under no obligation or expectation to process this list, but may make a decision about its relevance in due course.
       options:
-        - label: I agree to follow this project's Code of Conduct
+        - label: I understand.
           required: true
