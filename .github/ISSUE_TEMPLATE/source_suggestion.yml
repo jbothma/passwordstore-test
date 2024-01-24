@@ -1,6 +1,6 @@
 name: "New data source request/suggestion"
 description: Propose a new data source to potentially be added to OpenSanctions
-labels: suggestion
+labels: proposed
 body:
   - type: input
     id: data_url
