@@ -7,7 +7,7 @@ body:
     attributes:
       label: Data URL
       description: Where can the data be found, if known?
-- type: dropdown
+  - type: dropdown
     id: type
     attributes:
       label: Type of data
