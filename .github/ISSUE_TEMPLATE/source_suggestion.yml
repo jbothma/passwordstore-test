@@ -13,7 +13,7 @@ body:
       label: Type of data
       description: What kind of data is this?
       options:
-        - Sanctions (Government barring specific engagement e.g. financial transaction with these entities)
+        - Sanctions (Governments barring specific engagement e.g. financial transaction with these entities)
         - Debarment (Entities banned from participating in public contracting)
         - Crime/Wanted/Suspected (Persons suspected or convicted of crimes and listed by official law enforcement)
         - PEPs (Politicall Exposed Persons)
