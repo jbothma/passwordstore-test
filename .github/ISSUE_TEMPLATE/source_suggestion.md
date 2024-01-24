@@ -1,3 +1,4 @@
+---
 name: New data source request/suggestion
 description: File a bug report
 title: "[Data source]: "
@@ -59,3 +60,4 @@ body:
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
+---
