@@ -1,3 +1,4 @@
+blank_issues_enabled: true
 contact_links:
   - name: Suggestions for data sources to add to OpenSanctions
     url: https://opensanctions.org/dataset-suggestion-form
